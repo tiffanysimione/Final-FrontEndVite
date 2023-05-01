@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import './App.css';
 import { LoginPage } from './pages/LoginPage';
 import { TodoPage } from './pages/TodoPage';
+import  Navbar  from './components/Navbar'; 
+
 
 export const TokenContext = React.createContext(null);
 
@@ -16,6 +17,8 @@ function App() {
 
   return (
     <div className="App">
+        <Navbar />
+      
       <TokenContext.Provider value={[token, setToken]}>
         <Routes>
           <Route
